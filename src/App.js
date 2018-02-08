@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+// App.js is the gateway to our main React Component
+ 
 class App extends Component {
   render() {
     return (
+      // when you return it has to all be in one element (one top level div)
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+       My Project Manager App
       </div>
     );
   }
