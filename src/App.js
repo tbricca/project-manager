@@ -7,12 +7,33 @@ import './App.css';
 // App.js is the gateway to our main React Component
  
 class App extends Component {
+  // this is where we define our initial state
+  constructor() { 
+    // Have to call super() when you call a constructor()
+    super();
+    this.state = {
+      projects: [
+        {
+          title: 'Business Website',
+          category: 'Web Design'
+        },
+        {
+          title: ' Social App',
+          category: 'Mobile Development'
+        },
+        {
+          title: 'Ecommerce Shopping Cart',
+          category: 'Web Development'
+        }
+      ]
+    }
+  }
   render() {
     return (
       // when you return it has to all be in one element (one top level div)
       <div className="App">
        My Project Manager App
-       <Projects />
+       <Projects projects={this.state.projects} />
       </div>
     );
   }
