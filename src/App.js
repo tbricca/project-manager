@@ -12,21 +12,25 @@ class App extends Component {
     // Have to call super() when you call a constructor()
     super();
     this.state = {
-      projects: [
-        {
-          title: 'Business Website',
-          category: 'Web Design'
-        },
-        {
-          title: ' Social App',
-          category: 'Mobile Development'
-        },
-        {
-          title: 'Ecommerce Shopping Cart',
-          category: 'Web Development'
-        }
-      ]
+      projects: []
     }
+  }
+// lifecycle mehtod fires off everytime the component is re rendered
+  componentWillMount(){
+    this.setState({projects: [
+      {
+        title: 'Business Website',
+        category: 'Web Design'
+      },
+      {
+        title: ' Social App',
+        category: 'Mobile Development'
+      },
+      {
+        title: 'Ecommerce Shopping Cart',
+        category: 'Web Development'
+      }
+    ]});
   }
   render() {
     return (
