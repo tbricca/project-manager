@@ -9,8 +9,8 @@ class ProjectItem extends Component {
         return (
             // when you return it has to all be in one element (one top level div)
             <li className="Project">
-                
-      </li>
+                {this.props.project.title} - {this.props.project.category}
+            </li>
         );
     }
 }
