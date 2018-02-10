@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Projects from './Components/Projects';
 import './App.css';
+import AddProject from './Components/AddProject';
 // Only need app.css imported on the main folder
 
 
@@ -17,6 +18,7 @@ class App extends Component {
   }
 // lifecycle mehtod fires off everytime the component is re rendered
   componentWillMount(){
+
     this.setState({projects: [
       {
         title: 'Business Website',
@@ -35,8 +37,8 @@ class App extends Component {
   render() {
     return (
       // when you return it has to all be in one element (one top level div)
-      <div className="App">
-       My Project Manager App
+      <div className="App"> 
+       <AddProject />
        <Projects projects={this.state.projects} />
       </div>
     );
