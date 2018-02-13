@@ -36,14 +36,16 @@ class App extends Component {
   }
 
   handleAddProject(project){
-    console.log(project)
+     let projects = this.state.projects;
+     projects.push(project);
+     this.setState({projects:projects})
   }
 
   render() {
     return (
       // when you return it has to all be in one element (one top level div)
       <div className="App"> 
-       <AddProject addproject={this.handleAddProject.bind(this)}/>
+       <AddProject addProject={this.handleAddProject.bind(this)}/>
        <Projects projects={this.state.projects} />
       </div>
     );
