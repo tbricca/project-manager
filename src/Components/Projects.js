@@ -20,6 +20,7 @@ class Projects extends Component {
         return (
             // when you return it has to all be in one element (one top level div)
             <div className="Projects">
+            <h3>Latest Projects</h3>
                 {projectItems}
                 
       </div>
