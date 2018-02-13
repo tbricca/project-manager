@@ -17,7 +17,17 @@ class AddProject extends Component {
     // for the submit button or else it will submit it and we won't be able to see it on the console
     handleSubmit(e){
         // console.log('Submitted');
-        console.log(this.refs.title.value);
+       if(this.refs.title.value === ''){
+           alert('Title is required');
+       } else {
+           this.setState({newProject: {
+               title: this.refs.title.value,
+               category: this.refs.category.value
+           }}, function(){
+            //    console.log(this.state);
+            this.props.AddProject(this.state.newProject);
+           }); 
+       } 
         e.preventDefault();
     }
 
@@ -31,7 +41,7 @@ class AddProject extends Component {
                 <h3>Add Project</h3>
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <div>
-                        <label>Title</label><br />
+                        <label>Title</label><br /> 
                         <input type="text" ref="title" />
                     </div>
                     <div>
