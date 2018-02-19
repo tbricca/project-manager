@@ -43,21 +43,22 @@ class App extends Component {
   handleAddProject(project){
      let projects = this.state.projects;
      projects.push(project);
-     this.setState({projects:projects})
+     this.setState({projects:projects});
   }
 
   handleDeleteProject(id){
     let projects = this.state.projects;
-    let index = projects.findIndex(x => x.id === id)
+    let index = projects.findIndex(x => x.id === id);
     projects.splice(index, 1);
+    this.setState({projects:projects});
   }
 
   render() {
     return (
       // when you return it has to all be in one element (one top level div)
       <div className="App"> 
-       <AddProject addProject={this.handleAddProject.bind(this)}/>
-       <Projects projects={this.state.projects} onDelete={this.handleDeleteProject.bind(this)}/>
+       <AddProject addProject={this.handleAddProject.bind(this)} />
+       <Projects projects={this.state.projects} onDelete={this.handleDeleteProject.bind(this)} />
       </div>
     );
   }

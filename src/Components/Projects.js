@@ -12,9 +12,10 @@ class Projects extends Component {
         let projectItems;
         if (this.props.projects) {
             projectItems = this.props.projects.map(project => {
+                
                 return (
                     // Assigning each project item to the PrjectItem variable above
-                    <ProjectItem onDelete={this.deleteProject(this)}key= {project.title} project = {project} />
+                    <ProjectItem onDelete={this.deleteProject(this)} key= {project.title} project = {project} />
                 );
 
             });
@@ -23,10 +24,10 @@ class Projects extends Component {
         return (
             // when you return it has to all be in one element (one top level div)
             <div className="Projects">
-             <h3>Latest Projects</h3>
-                {projectItems}
+                <h3>Latest Projects</h3>
+                    {projectItems}
                 
-      </div>
+            </div>
         );
     }
 }
